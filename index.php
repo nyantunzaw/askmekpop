@@ -53,6 +53,8 @@ if($message)
 			  }, 
 			"message":{
 				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here:"
+			  }
+			  "message":{
 				"attachment":{
 				  "type":"video",
 				  "payload":{
