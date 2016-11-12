@@ -11,6 +11,7 @@
 
  $input = json_decode(file_get_contents('php://input'), true);
 
+ print_r($input);
 //Receive user
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
  //User's message
