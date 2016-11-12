@@ -28,14 +28,25 @@ echo $message;
 //Answer to the message adds 1
 if($message)
 {
- $jsonData = '{
-    "recipient":{
-        "id":"'.$sender.'"
-      }, 
-    "message":{
-        "text":"'.$message. ' 1' .'"
-      }
- }';
+	if ($message="best girl group"){
+		 $jsonData = '{
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"message":{
+				"text":"momoland!"
+			  }
+		 }';
+	}else{
+		$jsonData = '{
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"message":{
+				"text":"'.$message. ' 1' .'"
+			  }
+		 }';
+	}
 };
 
 
