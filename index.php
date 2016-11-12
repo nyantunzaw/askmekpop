@@ -5,7 +5,8 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
 } else {
     $data = json_decode(file_get_contents("php://input"), true);
     file_put_contents('fb.txt', print_r($data, true));
-	file_put_contents("fb.txt", "hahaha");
+	print_r($data, true);
+	file_put_contents("fb.txt", "hahaha2");
 	echo "bottom";
 }
 
