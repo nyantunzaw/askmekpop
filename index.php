@@ -28,7 +28,7 @@ echo $message;
 //Answer to the message adds 1
 if($message)
 {
-	if ($message="best girl group"){
+	if ($message=="best girl group"){
 		 $jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
