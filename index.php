@@ -37,8 +37,24 @@ if($message)
 				"text":"momoland!"
 			  }
 		 }';
-	}else{
+	}elseif(strpos($message, 'ioi') == true){
 		$jsonData = '{
+				"recipient":{
+					"id":"'.$sender.'"
+				  }, 
+				"message":{
+					"text":"And not to forget I.O.I!! They are the best!"
+				  }
+			 }';
+	}else{
+		 $jsonData = '{
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"message":{
+				"text":"'.$message. ' 1' .'"
+			  }
+		// $jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
 			  }, 
