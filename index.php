@@ -55,6 +55,15 @@ if($message)
 				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here: https://www.youtube.com/watch?v=3DNlbPLhBs8 "
 			  }
 		 }';
+	}elseif(strpos($message,"rachel") !== false){
+		$jsonData = '{
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"message":{
+				"text":"Are you talking about Rachel Oun??? She is like my ideal type!! Omgggg"
+			  }
+		 }';
 	}elseif(strpos($message,"momoland") !== false){
 		$jsonData = '{
 			"recipient":{
