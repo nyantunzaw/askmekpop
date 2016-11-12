@@ -46,6 +46,15 @@ if($message)
 				"text":"Not to forget I.O.I of coz!!! Sejeongggieeeee"
 			  }
 		 }';
+	}elseif(strpos($message,"ade") !== false){
+		$jsonData = '{
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"message":{
+				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here: https://www.youtube.com/watch?v=3DNlbPLhBs8 "
+			  }
+		 }';
 	}elseif(strpos($message,"momoland") !== false){
 		$jsonData = '{
 			"recipient":{
