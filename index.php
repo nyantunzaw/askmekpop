@@ -52,7 +52,13 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here: https://www.youtube.com/watch?v=3DNlbPLhBs8 "
+				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here:"
+				"attachment":{
+				  "type":"video",
+				  "payload":{
+					"url":"https://www.youtube.com/watch?v=3DNlbPLhBs8"
+				  }
+				} 
 			  }
 		 }';
 	}elseif(strpos($message,"rachel") !== false){
