@@ -16,7 +16,7 @@
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
  //User's message
  $message = $input['entry'][0]['messaging'][0]['message']['text'];
-echo $message;
+
 
 
 //Where the bot will send message
@@ -46,15 +46,15 @@ if($message)
 				"text":"Not to forget I.O.I of coz!!! Sejeongggieeeee"
 			  }
 		 }';
-	}else{
-		 $jsonData = '{
+	} else {
+		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
 				"text":"Give me a group name and i will tell you what i think about them"
+			  }
 		 }';
-		
 	}
 };
 
