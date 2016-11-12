@@ -46,6 +46,15 @@ if($message)
 				"text":"Not to forget I.O.I of coz!!! Sejeongggieeeee"
 			  }
 		 }';
+	}elseif(strpos($message,"momoland") !== false){
+		$jsonData = '{
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"message":{
+				"text":"Well, I can tell you Momoland is one of the most promising rookies for 2016!"
+			  }
+		 }';
 	} else {
 		$jsonData = '{
 			"recipient":{
