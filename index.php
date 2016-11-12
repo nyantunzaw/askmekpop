@@ -1,23 +1,52 @@
 <?php
-if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == "EAACOsds2GjIBAAsNeRHvd7pmWaVGdrPTKrlcRCpwHaXY4ZByiZC7RT2ZAUgSignn1l541HPKAZC5KCIpMQqchZAURNgQekuu0fyaBeDQUUkzIimw2WKSGBqNy65MnCRH7SNyoVvlTYwu5RRDnUrsW1MhHh9GHzKvBKgJRI3AaFQZDZD") {
-    echo $_REQUEST['hub_challenge'];
-	echo "top";
-} else {
-    $data = json_decode(file_get_contents("php://input"), true);
-    file_put_contents('fb.txt', print_r($data, true));
-	print_r($data, true);
-	file_put_contents("fb.txt", "hahaha2");
-	echo "bottom";
-}
+ $challenge = $_REQUEST['hub_challenge'];
+  $verify_token = $_REQUEST['hub_verify_token'];
 
-//file_put_contents("fb.txt", file_get_contents("php://input"));
+  if ($verify_token === 'nteezy') {
+  echo $challenge;
+  }
+  //Token of app
+ $row = "EAACOsds2GjIBAHZB3ZCZCaoBmP8vPP1X1erZBXdoKWHAiz8sUafo6nFgo2dbGtBCGfGUv8Om4ExUeHeSsdZBszZCZAR9KBQtS6daquA6s9eg7xkx630WHJAcqj8lsYJVLEYFFf4el9hldZBaXa5jvizunwkolaiZBJPjT8otXXR3CzwZDZD";
 
-echo "hello world2";
 
-//$fb = file_get_contents("fb.txt");
+ $input = json_decode(file_get_contents('php://input'), true);
 
-//echo "<pre>";
+//Receive user
+$sender = $input['entry'][0]['messaging'][0]['sender']['id'];
+ //User's message
+ $message = $input['entry'][0]['messaging'][0]['message']['text'];
 
-//$fb=json_decode($fb);
 
-//print_r($fb);
+
+//Where the bot will send message
+ $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$row;
+
+
+ $ch = curl_init($url);
+
+//Answer to the message adds 1
+if($message)
+{
+ $jsonData = '{
+    "recipient":{
+        "id":"'.$sender.'"
+      }, 
+    "message":{
+        "text":"'.$message. ' 1' .'"
+      }
+ }';
+};
+
+
+
+ $json_enc = $jsonData;
+
+ curl_setopt($ch, CURLOPT_POST, 1);
+
+ curl_setopt($ch, CURLOPT_POSTFIELDS, $json_enc);
+
+ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));  
+
+ if(!empty($input['entry'][0]['messaging'][0]['message'])){
+    $result = curl_exec($ch);
+ }
