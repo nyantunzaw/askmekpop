@@ -3,7 +3,7 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
     echo $_REQUEST['hub_challenge'];
 } else {
     $data = json_decode(file_get_contents("php://input"), true);
-    file_put_contents('bot_'.time().'.txt', print_r($data, true));
+    file_put_contents('fb.txt', print_r($data, true));
 }
 
 //file_put_contents("fb.txt", file_get_contents("php://input"));
