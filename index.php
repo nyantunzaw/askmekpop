@@ -28,15 +28,24 @@ echo $message;
 //Answer to the message adds 1
 if($message)
 {
-	if (strpos($message, 'ioi') !== false){
+	if ($message=="best girl group"){
 		 $jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"And not to forget I.O.I!! They are the best!"
+				"text":"momoland!"
 			  }
 		 }';
+	}elseif()$message=="ioi"){
+		$jsonData = '{
+				"recipient":{
+					"id":"'.$sender.'"
+				  }, 
+				"message":{
+					"text":"And not to forget I.O.I!! They are the best!"
+				  }
+			 }';
 	}else{
 		 $jsonData = '{
 			"recipient":{
