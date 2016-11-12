@@ -52,13 +52,13 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"'.$message. ' 1' .'"
+				"text":"Give me a group name and i will tell you what i think about them"
 		 }';
 		
 	}
 };
 
-
+// "text":"'.$message. ' 1' .'"
 
  $json_enc = $jsonData;
 
