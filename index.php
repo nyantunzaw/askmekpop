@@ -154,8 +154,9 @@ if($message)
 				  "type":"template",
 				  "payload":{
 					"template_type":"generic",
-					"elements":[
-					  {
+					"elements":[';
+					
+			$jsonData .='{
 						"title":"Welcome to Peter\'s Hats",
 						"item_url":"https://petersfancybrownhats.com",
 						"image_url":"https://petersfancybrownhats.com/company_image.png",
