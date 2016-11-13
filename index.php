@@ -1,6 +1,4 @@
 <?php
-$hostname = getenv('HTTP_HOST');
-echo $hostname;
 
  $challenge = $_REQUEST['hub_challenge'];
   $verify_token = $_REQUEST['hub_verify_token'];
@@ -141,6 +139,9 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message,"momoland") !== false){
+		$hostname = getenv('HTTP_HOST');
+		echo $hostname;
+		
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
@@ -149,7 +150,7 @@ if($message)
 				"attachment":{
 				"type":"image",
 					"payload":{
-						"url":"./images/ade/ade_jiseo.jpg"
+						"url":"'.$hostname.'/images/ade/ade_jiseo.jpg"
 					}
 				}
 			}
