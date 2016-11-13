@@ -8,20 +8,7 @@
   //Token of app
  $row = "EAACOsds2GjIBAHZB3ZCZCaoBmP8vPP1X1erZBXdoKWHAiz8sUafo6nFgo2dbGtBCGfGUv8Om4ExUeHeSsdZBszZCZAR9KBQtS6daquA6s9eg7xkx630WHJAcqj8lsYJVLEYFFf4el9hldZBaXa5jvizunwkolaiZBJPjT8otXXR3CzwZDZD";
 
- //Database Connection
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-
-$conn = new mysqli($server, $username, $password, $db);
-if ($conn->connect_error) {
-    echo "Connection failed";
-}
-
-// Parsing the input
  $input = json_decode(file_get_contents('php://input'), true);
 
  print_r($input);
@@ -60,34 +47,6 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message," ade ") !== false || $message=="ade" ){
-		$sql = "SELECT * FROM girl_groups where group_name='ade'";
-		$result = $conn->query($sql);
-		$jsonData = '{
-			"recipient":{
-				"id":"'.$sender.'"
-			  },
-			  "message":{
-				  "text":
-		';
-		
-		if ($result->num_rows > 0) {
-			// output data of each row
-			$jsonData .= "'";
-			while($row = $result->fetch_assoc()) {
-				
-				$jsonData .= $row["member_name"]. ' , '
-			}
-			$jsonData .= "'";
-			
-			//echo "No: " . $row["id"]. " - Group Name: " . $row["group_name"]. " - Member Name: " . $row["member_name"]. "<br>";
-				
-			
-		} else {
-			echo "0 results";
-		}
-		
-		$jsonData .= '}}';
-/*		
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
@@ -128,8 +87,6 @@ if($message)
 				}
 			 }
 		 }';
-		 
-		 */
 	}elseif(strpos($message,"rachel") !== false){
 		$jsonData = '{
 			"recipient":{
@@ -174,7 +131,18 @@ if($message)
     $result = curl_exec($ch);
  }
  
-/*
+ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$conn = new mysqli($server, $username, $password, $db);
+if ($conn->connect_error) {
+    echo "Connection failed";
+}
+
 $sql = "SELECT * FROM girl_groups";
 $result = $conn->query($sql);
 
@@ -186,5 +154,5 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-*/
+
 $conn->close();
