@@ -71,7 +71,9 @@ if($message)
 
 		if ($result->num_rows > 0) {		
 			$jsonData .= '"';
-			$jsonData .= 'adeeee got data'. ' , ';
+			while($row = $result->fetch_assoc()) {
+				$jsonData .= $row["member_name"]. ' , ';
+			}
 			$jsonData .= '"';
 			$jsonData .= '}
 			}';
