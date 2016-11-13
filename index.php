@@ -52,13 +52,26 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here:",
 				"attachment":{
-				  "type":"image",
-				  "payload":{
-					"url":"https://pbs.twimg.com/media/CoZKdotXgAEnH8P.jpg:large"
-				
-				  }
+					"type":"template",
+					"payload":{
+						"template_type":"generic",
+						"elements":[
+						  {
+							"title":"Haeyoung",
+							"item_url":"http://www.kpopmap.com/ade-kpop-profile/",
+							"image_url":"https://pbs.twimg.com/media/CkB7HgYUgAAjY0i.jpg",
+							"subtitle":"Haeyoung is one of the most well-known members of A.De",
+							"buttons":[
+							  {
+								"type":"web_url",
+								"url":"http://www.kpopmap.com/ade-kpop-profile/",
+								"title":"View A.De Profile"
+							  }            
+							]
+						  }
+						]
+					  }
 				}
 			 }
 		 }';
