@@ -46,7 +46,7 @@ if($message)
 				"text":"Not to forget I.O.I of coz!!! Sejeongggieeeee"
 			  }
 		 }';
-	}elseif(strpos($message,"ade") !== false || $message=="ade" ){
+	}elseif(strpos($message," ade ") !== false || $message=="ade" ){
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
@@ -130,3 +130,16 @@ if($message)
  if(!empty($input['entry'][0]['messaging'][0]['message'])){
     $result = curl_exec($ch);
  }
+ 
+ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$conn = new mysqli($server, $username, $password, $db);
+if ($conn)
+{
+	echo "success";
+	}
