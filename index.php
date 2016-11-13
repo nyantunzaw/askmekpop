@@ -78,7 +78,7 @@ if($message)
 		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
 		$result = $conn->query($sql);
 		
-		$counter = 0;
+		$counter_ade = 0;
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
@@ -93,7 +93,7 @@ if($message)
 					
 			if ($result->num_rows > 0) {		
 				while($row = $result->fetch_assoc()) {
-					++$counter;
+					++$counter_ade;
 					$jsonData .= '{
 					';
 					$jsonData .= '"title":"'.$row["member_name"].'",
@@ -102,7 +102,7 @@ if($message)
 					';
 					$jsonData .= '"image_url":"'.$hostname.$row["image_link"].'"
 					';
-					if ($counter < $result->num_rows+1){
+					if ($counter_ade < $result->num_rows+1){
 						$jsonData .= '},
 						';
 					}else{
