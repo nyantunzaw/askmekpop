@@ -58,10 +58,11 @@ if($message)
 				"text":"';
 		if ($result->num_rows > 0) {		
 				while($row = $result->fetch_assoc()) {
-					$jsonData.='momoland ,"
-					';
+					$jsonData.='momoland ,';
 				}
+				
 		}
+		$jsonData.='"';
 		$jsonData.='}
 			}';
 	}elseif(strpos($message,"ioi") !== false){
