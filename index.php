@@ -75,6 +75,9 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message," ade ") !== false || $message=="ade" ){
+		
+		// A.DE
+		
 		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
 		$result = $conn->query($sql);
 		
@@ -135,7 +138,9 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message,"momoland") !== false){
-		$sql = "SELECT * FROM girl_groups where group_name='momoland'";
+		// Momoland
+		
+		$sql = "SELECT * FROM girl_groups where group_name='Momoland'";
 		$result = $conn->query($sql);
 		
 		$counter = 0;
