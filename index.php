@@ -60,8 +60,20 @@ if($message)
 						  {
 							"title":"Haeyoung",
 							"item_url":"http://www.kpopmap.com/ade-kpop-profile/",
-							"image_url":"https://pbs.twimg.com/media/CkB7HgYUgAAjY0i.jpg",
+							"image_url":"http://www.drhallyu.com/img/Kpop-idols-jpg/Ade_Haeyoung.jpeg",
 							"subtitle":"Haeyoung is one of the most well-known members of A.De",
+							"buttons":[
+							  {
+								"type":"web_url",
+								"url":"http://www.kpopmap.com/ade-kpop-profile/",
+								"title":"View A.De Profile"
+							  }            
+							]
+						  },
+						  {
+							"title":"Miso",
+							"item_url":"http://www.kpopmap.com/ade-kpop-profile/",							"image_url":"https://allaboutkpopgirlgroups.files.wordpress.com/2016/06/ade-strawberry-miso.jpg",
+							"subtitle":"Miso is another well-known member of A.De",
 							"buttons":[
 							  {
 								"type":"web_url",
