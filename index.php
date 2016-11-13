@@ -46,7 +46,7 @@ if($message)
 				"text":"Not to forget I.O.I of coz!!! Sejeongggieeeee"
 			  }
 		 }';
-	}elseif(strpos($message,"ade") !== false){
+	}elseif(strpos($message,"ade") !== false || $message=="ade" ){
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
