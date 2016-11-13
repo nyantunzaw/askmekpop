@@ -1,4 +1,7 @@
 <?php
+$hostname = getenv('HTTP_HOST');
+echo $hostname;
+
  $challenge = $_REQUEST['hub_challenge'];
   $verify_token = $_REQUEST['hub_verify_token'];
 
