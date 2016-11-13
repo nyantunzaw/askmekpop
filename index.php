@@ -58,7 +58,7 @@ if($message)
 				"text":"';
 		if ($result->num_rows > 0) {		
 				while($row = $result->fetch_assoc()) {
-					$jsonData.=$hostname.$row["image_link"];
+					$jsonData.="test";
 				}
 				
 		}
@@ -77,72 +77,54 @@ if($message)
 	}elseif(strpos($message," ade ") !== false || $message=="ade" ){
 		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
 		$result = $conn->query($sql);
-		$jsonData = '{
-			"recipient":{
-				"id":"'.$sender.'"
-			  }, 
-			"message":{
-				"text":';
-
-		if ($result->num_rows > 0) {		
-			$jsonData .= '"';
-			while($row = $result->fetch_assoc()) {
-				$jsonData .= $row["member_name"]. ' , ';
-			}
-			$jsonData .= '"';
-			$jsonData .= '}
-			}';
-		}else{
-			$jsonData .= '"Can\'t find info for A.DE T_T"';
-			$jsonData .= '}
-			}';
-
-		}
-
 		
-/*		
+		$counter = 0;
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
-			  }, 
+			 },
 			"message":{
 				"attachment":{
-					"type":"template",
-					"payload":{
-						"template_type":"generic",
-						"elements":[
-						  {
-							"title":"Haeyoung",
-							"item_url":"http://www.kpopmap.com/ade-kpop-profile/",
-							"image_url":"http://www.drhallyu.com/img/Kpop-idols-jpg/Ade_Haeyoung.jpeg",
-							"subtitle":"Haeyoung is one of the most well-known members of A.De",
-							"buttons":[
-							  {
-								"type":"web_url",
-								"url":"http://www.kpopmap.com/ade-kpop-profile/",
-								"title":"View A.De Profile"
-							  }            
-							]
-						  },
-						  {
-							"title":"Miso",
-							"item_url":"http://www.kpopmap.com/ade-kpop-profile/",							"image_url":"https://allaboutkpopgirlgroups.files.wordpress.com/2016/06/ade-strawberry-miso.jpg",
-							"subtitle":"Miso is another well-known member of A.De",
-							"buttons":[
-							  {
-								"type":"web_url",
-								"url":"http://www.kpopmap.com/ade-kpop-profile/",
-								"title":"View A.De Profile"
-							  }            
-							]
-						  }
-						]
-					  }
+				  "type":"template",
+				  "payload":{
+					"template_type":"generic",
+					"elements":[
+					';
+					
+			if ($result->num_rows > 0) {		
+				while($row = $result->fetch_assoc()) {
+					++$counter;
+					$jsonData .= '{
+					';
+					$jsonData .= '"title":"'.$row["member_name"].'",
+					';
+					$jsonData .= '"item_url":"'.$hostname.$row["image_link"].'",
+					';
+					$jsonData .= '"image_url":"'.$hostname.$row["image_link"].'"
+					';
+					if ($counter < $result->num_rows+1){
+						$jsonData .= '},
+						';
+					}else{
+						$jsonData .= '}
+						';
+					}
+										
 				}
-			 }
-		 }';
-		 
-		 */
+			}else{
+				$jsonData .= '{
+					';
+				$jsonData .= '"title":"Can\'t find info for A.DE T_T"
+				';
+				$jsonData .= '}
+						';
+			}				
+			$jsonData .='
+						]
+					}
+				}
+			}
+	  }';
 	}elseif(strpos($message,"rachel") !== false){
 		$jsonData = '{
 			"recipient":{
@@ -190,9 +172,12 @@ if($message)
 										
 				}
 			}else{
-				//$jsonData .= '"Can\'t find info for A.DE T_T"';
-				//$jsonData .= '}
-				//}';
+				$jsonData .= '{
+					';
+				$jsonData .= '"title":"Can\'t find info for A.DE T_T"
+				';
+				$jsonData .= '}
+						';
 			}				
 			$jsonData .='
 						]
@@ -200,8 +185,6 @@ if($message)
 				}
 			}
 	  }';
-	  
-	 
 	} else {
 		$jsonData = '{
 			"recipient":{
