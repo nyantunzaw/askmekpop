@@ -67,13 +67,15 @@ if($message)
 				"id":"'.$sender.'"
 			  },
 			  "message":{
-				  "text":
-		';
+				  "text":"ade is jjang!";
+			  }
+		}';
 		
-		$jsonData .= '"';
-		$jsonData .= 'ade'. ' , '
-		$jsonData .= '"';
-		$jsonData .= '}}';
+	//	$jsonData .= '"';
+	//	$jsonData .= 'ade'. ' , '
+	//	$jsonData .= '"';
+	//	$jsonData .= '}}';
+		
 		// ===================================
 	/*	if ($result->num_rows > 0) {
 			// output data of each row
