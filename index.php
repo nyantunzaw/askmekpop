@@ -143,13 +143,13 @@ if ($conn->connect_error) {
     echo "Connection failed";
 }
 
-$sql = "SELECT * FROM test";
+$sql = "SELECT * FROM girl_groups";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "No: " . $row["No"]. " - Name: " . $row["Name"]. "<br>";
+        echo "No: " . $row["id"]. " - Group Name: " . $row["group_name"]. " - Member Name: " . $row["member_name"]. "<br>";
     }
 } else {
     echo "0 results";
