@@ -38,9 +38,10 @@ $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 
 //Where the bot will send message
  $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$row;
-
+ $thread_settings = 'https://graph.facebook.com/v2.6/me/thread_settings?access_token='.$row;
 
  $ch = curl_init($url);
+ $ch_thread = curl_init($thread_settings);
 
 //Answer to the message adds 1
 if($message)
@@ -237,7 +238,7 @@ if($message)
 
  curl_setopt($ch, CURLOPT_POST, 1);
  
-  curl_setopt($ch, CURLOPT_POST, $json_menu);
+  curl_setopt($ch_thread, CURLOPT_POST, $json_menu);
 
  curl_setopt($ch, CURLOPT_POSTFIELDS, $json_enc);
 
