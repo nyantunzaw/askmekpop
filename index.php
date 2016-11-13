@@ -142,35 +142,41 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message,"momoland") !== false){
-
+		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
+		$result = $conn->query($sql);
 		
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
-			  }, 
-			 "message":{
+			 },
+			"message":{
 				"attachment":{
-					"type":"template",
-					"payload":{
-						"template_type":"generic",
-						"elements":[
+				  "type":"template",
+				  "payload":{
+					"template_type":"generic",
+					"elements":[
+					  {
+						"title":"Welcome to Peter\'s Hats",
+						"item_url":"https://petersfancybrownhats.com",
+						"image_url":"https://petersfancybrownhats.com/company_image.png",
+						"subtitle":"We\'ve got the right hat for everyone.",
+						"buttons":[
 						  {
-							"title":"Haeyoung",
-							"item_url":"http://www.kpopmap.com/ade-kpop-profile/",
-							"image_url":"'.$hostname.'/images/ade/ade_jiseo.jpg"
-							"subtitle":"Haeyoung is one of the most well-known members of A.De",
-							"buttons":[
-							  {
-								"type":"web_url",
-								"url":"http://www.kpopmap.com/ade-kpop-profile/",
-								"title":"View A.De Profile"
-							  }            
-							]
-						  }
+							"type":"web_url",
+							"url":"https://petersfancybrownhats.com",
+							"title":"View Website"
+						  },
+						  {
+							"type":"postback",
+							"title":"Start Chatting",
+							"payload":"DEVELOPER_DEFINED_PAYLOAD"
+						  }              
 						]
 					  }
+					]
+				  }
 				}
-			 }
+			  }
 		 }';
 	} else {
 		$jsonData = '{
