@@ -52,12 +52,7 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here:"
-			},
-			"recipient":{
-				"id":"'.$sender.'"
-			  }, 
-			"message":{
+				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here:",
 				"attachment":{
 				  "type":"image",
 				  "payload":{
@@ -65,7 +60,7 @@ if($message)
 				
 				  }
 				}
-			  }
+			 }
 		 }';
 	}elseif(strpos($message,"rachel") !== false){
 		$jsonData = '{
