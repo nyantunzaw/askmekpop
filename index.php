@@ -74,9 +74,10 @@ if($message)
 	//	 }';
 		
 		$jsonData .= '"';
-		$jsonData .= 'adeeee yesssss'. ' , '
+		$jsonData .= 'adeeee yesssss'. ' , ';
 		$jsonData .= '"';
-		$jsonData .= '}}';
+		$jsonData .= '}
+		}';
 		
 		// ===================================
 	/*	if ($result->num_rows > 0) {
