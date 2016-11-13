@@ -139,7 +139,20 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
-if ($conn)
-{
-	echo "success";
-	}
+if ($conn->connect_error) {
+    echo "Connection failed";
+}
+
+$sql = "SELECT * FROM test";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "No: " . $row["No"]. " - Name: " . $row["name"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
