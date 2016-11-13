@@ -149,7 +149,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "No: " . $row["No"]. " - Name: " . $row["name"]. "<br>";
+        echo "No: " . $row["No"]. " - Name: " . $row["Name"]. "<br>";
     }
 } else {
     echo "0 results";
