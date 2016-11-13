@@ -67,12 +67,11 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":
-		';
+				"text":';
 				
 		$jsonData .= '"ADEEEEE"
 			  }
-		 }'
+		 }';
 		
 	//	$jsonData .= '"';
 	//	$jsonData .= 'ade'. ' , '
