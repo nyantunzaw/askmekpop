@@ -60,25 +60,29 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message," ade ") !== false || $message=="ade" ){
-	//	$sql = "SELECT * FROM girl_groups where group_name='a.de'";
-	//	$result = $conn->query($sql);
+		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
+		$result = $conn->query($sql);
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
 				"text":';
-				
-	//	$jsonData .= '"ADEEEEE"
-	//		  }
-	//	 }';
-		
-		$jsonData .= '"';
-		$jsonData .= 'adeeee yesssss'. ' , ';
-		$jsonData .= '"';
-		$jsonData .= '}
-		}';
-		
+
+		if ($result->num_rows > 0) {		
+			$jsonData .= '"';
+			$jsonData .= 'adeeee got data'. ' , ';
+			$jsonData .= '"';
+			$jsonData .= '}
+			}';
+		}else{
+			$jsonData .= '"';
+			$jsonData .= 'adeeee no data'. ' , ';
+			$jsonData .= '"';
+			$jsonData .= '}
+			}';
+
+		}
 		// ===================================
 	/*	if ($result->num_rows > 0) {
 			// output data of each row
