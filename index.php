@@ -52,11 +52,17 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here:",
+				"text":"A.De girls are kinda cute also. Personally i like Haeyoung. She is damn cool since produce 101!! If you have not watched, watch it below here:"
+			},
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"message":{
 				"attachment":{
 				  "type":"image",
 				  "payload":{
 					"url":"https://pbs.twimg.com/media/CoZKdotXgAEnH8P.jpg:large"
+				
 				  }
 				}
 			  }
