@@ -60,7 +60,7 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message," ade ") !== false || $message=="ade" ){
-		$sql = "SELECT * FROM girl_groups where group_name='ade'";
+		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
 		$result = $conn->query($sql);
 		$jsonData = '{
 			"recipient":{
@@ -72,12 +72,12 @@ if($message)
 		
 		if ($result->num_rows > 0) {
 			// output data of each row
-			$jsonData .= "'";
+			$jsonData .= '"';
 			while($row = $result->fetch_assoc()) {
 				
 				$jsonData .= $row["member_name"]. ' , '
 			}
-			$jsonData .= "'";
+			$jsonData .= '"';
 			
 			//echo "No: " . $row["id"]. " - Group Name: " . $row["group_name"]. " - Member Name: " . $row["member_name"]. "<br>";
 				
