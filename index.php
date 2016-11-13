@@ -165,6 +165,8 @@ if($message)
 					';
 					$jsonData .= '"title":"'.$row["member_name"].'",
 					';
+					$jsonData .= '"item_url":"'.$hostname.$row["image_link"].'",
+					';
 					$jsonData .= '"image_url":"'.$hostname.$row["image_link"].'"
 					';
 					if ($counter < $result->num_rows+1){
