@@ -142,8 +142,7 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message,"momoland") !== false){
-		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
-		$result = $conn->query($sql);
+
 		
 		$jsonData = '{
 			"recipient":{
