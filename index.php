@@ -143,8 +143,13 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"Well, I can tell you Momoland is one of the most promising rookies for 2016!"
-			  }
+				"attachment":{
+				"type":"image",
+					"payload":{
+						"url":"./images/ade/ade_jiseo.jpg"
+					}
+				}
+			}
 		 }';
 	} else {
 		$jsonData = '{
