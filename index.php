@@ -70,7 +70,12 @@ if($message)
 				  "text":
 		';
 		
-		if ($result->num_rows > 0) {
+		$jsonData .= '"';
+		$jsonData .= 'ade'. ' , '
+		$jsonData .= '"';
+		$jsonData .= '}}';
+		// ===================================
+	/*	if ($result->num_rows > 0) {
 			// output data of each row
 			$jsonData .= '"';
 			while($row = $result->fetch_assoc()) {
@@ -87,6 +92,10 @@ if($message)
 		}
 		
 		$jsonData .= '}}';
+		*/
+		
+		// =====================================
+		
 /*		
 		$jsonData = '{
 			"recipient":{
