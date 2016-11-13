@@ -69,14 +69,14 @@ if($message)
 			"message":{
 				"text":';
 				
-		$jsonData .= '"ADEEEEE"
-			  }
-		 }';
+	//	$jsonData .= '"ADEEEEE"
+	//		  }
+	//	 }';
 		
-	//	$jsonData .= '"';
-	//	$jsonData .= 'ade'. ' , '
-	//	$jsonData .= '"';
-	//	$jsonData .= '}}';
+		$jsonData .= '"';
+		$jsonData .= 'adeeee yesssss'. ' , '
+		$jsonData .= '"';
+		$jsonData .= '}}';
 		
 		// ===================================
 	/*	if ($result->num_rows > 0) {
