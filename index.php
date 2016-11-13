@@ -205,11 +205,42 @@ if($message)
 // "text":"'.$message. ' 1' .'"
 
  $json_enc = $jsonData;
+ 
+ $json_menu = '{
+	 "setting_type" : "call_to_actions",
+	  "thread_state" : "existing_thread",
+	  "call_to_actions":[
+    {
+      "type":"postback",
+      "title":"Help",
+      "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
+    },
+    {
+      "type":"postback",
+      "title":"Start a New Order",
+      "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_START_ORDER"
+    },
+    {
+      "type":"web_url",
+      "title":"Checkout",
+      "url":"http://petersapparel.parseapp.com/checkout",
+      "webview_height_ratio": "full",
+      "messenger_extensions": true
+    },
+    {
+      "type":"web_url",
+      "title":"View Website",
+      "url":"http://petersapparel.parseapp.com/"
+    }
+  ]
+  }';
 
  curl_setopt($ch, CURLOPT_POST, 1);
 
  curl_setopt($ch, CURLOPT_POSTFIELDS, $json_enc);
 
+ curl_setopt($ch, CURLOPT_POSTFIELDS, $json_menu);
+ 
  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));  
 
  if(!empty($input['entry'][0]['messaging'][0]['message'])){
