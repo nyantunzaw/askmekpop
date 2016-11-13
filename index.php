@@ -58,7 +58,7 @@ if($message)
 				"text":"';
 		if ($result->num_rows > 0) {		
 				while($row = $result->fetch_assoc()) {
-					$jsonData.='momoland ,';
+					$jsonData.=$hostname.$row["image_link"];
 				}
 				
 		}
