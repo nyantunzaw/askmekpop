@@ -78,34 +78,12 @@ if($message)
 			$jsonData .= '}
 			}';
 		}else{
-			$jsonData .= '"';
-			$jsonData .= 'adeeee no data'. ' , ';
-			$jsonData .= '"';
+			$jsonData .= '"Can\'t find info for A.DE T_T"';
 			$jsonData .= '}
 			}';
 
 		}
-		// ===================================
-	/*	if ($result->num_rows > 0) {
-			// output data of each row
-			$jsonData .= '"';
-			while($row = $result->fetch_assoc()) {
-				
-				$jsonData .= $row["member_name"]. ' , '
-			}
-			$jsonData .= '"';
-			
-			//echo "No: " . $row["id"]. " - Group Name: " . $row["group_name"]. " - Member Name: " . $row["member_name"]. "<br>";
-				
-			
-		} else {
-			echo "0 results";
-		}
-		
-		$jsonData .= '}}';
-		*/
-		
-		// =====================================
+
 		
 /*		
 		$jsonData = '{
