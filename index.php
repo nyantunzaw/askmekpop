@@ -135,7 +135,7 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message,"momoland") !== false){
-		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
+		$sql = "SELECT * FROM girl_groups where group_name='momoland'";
 		$result = $conn->query($sql);
 		
 		$counter = 0;
@@ -174,7 +174,7 @@ if($message)
 			}else{
 				$jsonData .= '{
 					';
-				$jsonData .= '"title":"Can\'t find info for A.DE T_T"
+				$jsonData .= '"title":"Can\'t find info for Momoland T_T"
 				';
 				$jsonData .= '}
 						';
@@ -191,7 +191,7 @@ if($message)
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"Give me a group name and i will tell you what i think about them"
+				"text":"Give me a group name and i will tell you about its members"
 			  }
 		 }';
 	}
