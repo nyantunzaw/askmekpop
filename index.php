@@ -45,15 +45,25 @@ $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 //Answer to the message adds 1
 if($message)
 {
-	if ($message=="best girl group"){
+	if ($message=="test"){
+		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
+		$result = $conn->query($sql);
+		
+		
 		 $jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
 			  }, 
 			"message":{
-				"text":"momoland!"
-			  }
-		 }';
+				"text":"';
+		if ($result->num_rows > 0) {		
+				while($row = $result->fetch_assoc()) {
+					$jsonData.='momoland ,"
+					';
+				}
+		}
+		$jsonData.='}
+			}';
 	}elseif(strpos($message,"ioi") !== false){
 		$jsonData = '{
 			"recipient":{
