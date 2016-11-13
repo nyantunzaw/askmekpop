@@ -9,6 +9,9 @@
   //Token of app
  $row = "EAACOsds2GjIBAHZB3ZCZCaoBmP8vPP1X1erZBXdoKWHAiz8sUafo6nFgo2dbGtBCGfGUv8Om4ExUeHeSsdZBszZCZAR9KBQtS6daquA6s9eg7xkx630WHJAcqj8lsYJVLEYFFf4el9hldZBaXa5jvizunwkolaiZBJPjT8otXXR3CzwZDZD";
 
+ //Getting base host name (website's URL)
+ 	$hostname = getenv('HTTP_HOST');
+ 
  //Database Connection
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
@@ -139,21 +142,36 @@ if($message)
 			  }
 		 }';
 	}elseif(strpos($message,"momoland") !== false){
-		$hostname = getenv('HTTP_HOST');
-		echo $hostname;
+		$sql = "SELECT * FROM girl_groups where group_name='a.de'";
+		$result = $conn->query($sql);
 		
 		$jsonData = '{
 			"recipient":{
 				"id":"'.$sender.'"
 			  }, 
-			"message":{
+			 "message":{
 				"attachment":{
-				"type":"image",
+					"type":"template",
 					"payload":{
-						"url":"'.$hostname.'/images/ade/ade_jiseo.jpg"
-					}
+						"template_type":"generic",
+						"elements":[
+						  {
+							"title":"Haeyoung",
+							"item_url":"http://www.kpopmap.com/ade-kpop-profile/",
+							"image_url":"'.$hostname.'/images/ade/ade_jiseo.jpg"
+							"subtitle":"Haeyoung is one of the most well-known members of A.De",
+							"buttons":[
+							  {
+								"type":"web_url",
+								"url":"http://www.kpopmap.com/ade-kpop-profile/",
+								"title":"View A.De Profile"
+							  }            
+							]
+						  }
+						]
+					  }
 				}
-			}
+			 }
 		 }';
 	} else {
 		$jsonData = '{
