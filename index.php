@@ -76,15 +76,15 @@ if($message)
 					"payload":{
 						"elements":[{
 							"buttons": [{
-								"title":"Webview example",
+								"title":"View it now",
 								"type":"web_url",
 								"url":"http://askmekpop.herokuapp.com/game",
-								"webview_height_ratio":"compact"
+								"webview_height_ratio":"full"
 							}],
-							"image_url": "http://askmekpop.herokuapp.com/images/ade/ade_choyoon.jpg",
+							"image_url": "http://askmekpop.herokuapp.com/images/nteezy.png",
 							"item_url": "http://askmekpop.herokuapp.com/game",
-							"subtitle":"It\'s a TV!",
-							"title":"Some TV"
+							"subtitle":"You can try to move around",
+							"title":"Play a cool game!"
 						}],
 						"template_type":"generic"
 					},
