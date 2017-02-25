@@ -74,9 +74,12 @@ if($message)
 			"buttons":[
               {
                 "type":"web_url",
-                "url":"https://petersfancyapparel.com/criteria_selector",
+                "url":"https://www.google.com",
                 "title":"Select Criteria",
+				"webview_height_ratio": "full",
+				"messenger_extensions": true,  
                 "webview_height_ratio": "compact"
+				"fallback_url": "https://www.messenger.com/closeWindow/?image_url=IMAGE_URL&display_text=DISPLAY_TEXT"
               }
 			]
 		 }';
