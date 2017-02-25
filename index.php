@@ -66,6 +66,21 @@ if($message)
 		$jsonData.='"';
 		$jsonData.='}
 			}';
+	}elseif($message=="web" ){
+		$jsonData = '{
+			"recipient":{
+				"id":"'.$sender.'"
+			  }, 
+			"buttons":[
+              {
+                "type":"web_url",
+                "url":"https://petersfancyapparel.com/criteria_selector",
+                "title":"Select Criteria",
+                "webview_height_ratio": "compact"
+              }
+			]
+		 }';
+		
 	}elseif(strpos($message,"ioi") !== false){
 		$jsonData = '{
 			"recipient":{
