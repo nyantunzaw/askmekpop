@@ -78,11 +78,11 @@ if($message)
 							"buttons": [{
 								"title":"Webview example",
 								"type":"web_url",
-								"url":"http://www.google.com",
+								"url":"http://askmekpop.herokuapp.com/game",
 								"webview_height_ratio":"compact"
 							}],
 							"image_url": "http://askmekpop.herokuapp.com/images/ade/ade_choyoon.jpg",
-							"item_url": "http://www.google.com",
+							"item_url": "http://askmekpop.herokuapp.com/game",
 							"subtitle":"It\'s a TV!",
 							"title":"Some TV"
 						}],
