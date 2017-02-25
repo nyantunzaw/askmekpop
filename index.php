@@ -71,17 +71,26 @@ if($message)
 			"recipient":{
 				"id":"'.$sender.'"
 			  }, 
-			"buttons":[
-              {
-                "type":"web_url",
-                "url":"https://www.google.com",
-                "title":"Select Criteria",
-				"webview_height_ratio": "full",
-				"messenger_extensions": true,  
-                "webview_height_ratio": "compact"
-				"fallback_url": "https://www.messenger.com/closeWindow/?image_url=IMAGE_URL&display_text=DISPLAY_TEXT"
-              }
-			]
+			"message": {
+				"attachment":{
+					"payload":{
+						"elements":[{
+							"buttons": [{
+								"title":"Webview example",
+								"type":"web_url",
+								"url":"http://www.google.com",
+								"webview_height_ratio":"compact"
+							}],
+							"image_url": "http://askmekpop.herokuapp.com/images/ade/ade_choyoon.jpg",
+							"item_url": "http://www.google.com",
+							"subtitle":"It\'s a TV!",
+							"title":"Some TV"
+						}],
+						"template_type":"generic"
+					},
+					"type":"template"
+				}
+			}
 		 }';
 		
 	}elseif(strpos($message,"ioi") !== false){
