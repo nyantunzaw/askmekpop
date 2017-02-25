@@ -78,7 +78,7 @@ if($message)
 							"buttons": [{
 								"title":"View it now",
 								"type":"web_url",
-								"url":"http://askmekpop.herokuapp.com/web/fast.txt",
+								"url":"http://askmekpop.herokuapp.com/game",
 								"webview_height_ratio":"compact"
 							}],
 							"image_url": "http://askmekpop.herokuapp.com/images/nteezy.png",
