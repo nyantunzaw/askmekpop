@@ -79,7 +79,7 @@ if($message)
 								"title":"View it now",
 								"type":"web_url",
 								"url":"http://askmekpop.herokuapp.com/game",
-								"webview_height_ratio":"80%"
+								"webview_height_ratio":"tall"
 							}],
 							"image_url": "http://askmekpop.herokuapp.com/images/nteezy.png",
 							"item_url": "http://askmekpop.herokuapp.com/game",
